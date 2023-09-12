@@ -27,6 +27,12 @@ document.addEventListener('touchmove', (e) => {
     deltaX = currentX - initialX;
 
     rotationAngle += deltaX / 5;
+    if (rotationAngle > 180) {
+        rotationAngle = 180;
+    } else if (rotationAngle < 0) {
+        rotationAngle = 0;
+    }
+
     card.style.transform = `rotateY(${rotationAngle}deg)`;
 });
 
